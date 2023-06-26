@@ -38,7 +38,7 @@
                 </div>
                 <div class="form-group">
                   <label for="rekomendasi_treatment">Rekomendasi Treatment</label>
-                  <input id="rekomendasi_treatment" type="hidden"  name="rekomendasi_treatment" class="form-control @error('rekomendasi_treatment') is-invalid @enderror" value="{{$edit->rekomendasi_treatment}}" placeholder="" > 
+                  <input id="rekomendasi_treatment" type="hidden"  name="rekomendasi_treatment" class="form-control @error('rekomendasi_treatment') is-invalid @enderror"  placeholder="" > 
                   <trix-editor input="rekomendasi_treatment"> {!! $edit->rekomendasi_treatment !!}</trix-editor>
                   @error('rekomendasi_treatment')
                       <div class="invalid-feedback">{{ $message }}</div>

@@ -43,7 +43,7 @@
                 </div> 
                 <div class="form-group">
                   <label for="fungsi">Fungsi</label>
-                  <input id="fungsi" type="hidden"  name="fungsi" class="form-control @error('fungsi') is-invalid @enderror" value="{{$edit->fungsi}}" placeholder="" > 
+                  <input id="fungsi" type="hidden"  name="fungsi" class="form-control @error('fungsi') is-invalid @enderror"  placeholder="" > 
                   <trix-editor input="fungsi"> {!! $edit->fungsi !!}</trix-editor>
                   @error('fungsi')
                       <div class="invalid-feedback">{{ $message }}</div>
