@@ -51,7 +51,7 @@
                     </li>
                 <li class="nav-header">REPORT</li>
                     <li class="nav-item">
-                        <a href="/admin/riwayat-diagnosa" class="nav-link {{ request()->is('riwayat-diagnosa') ? 'active' : '' }}">
+                        <a href="/admin/riwayat-diagnosa" class="nav-link {{ request()->is('admin/riwayat-diagnosa') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-chart-line"></i>
                             <p>Riwayat Diagnosa</p>
                         </a>

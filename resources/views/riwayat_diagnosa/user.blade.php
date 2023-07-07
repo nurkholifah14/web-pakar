@@ -1,6 +1,6 @@
 @extends('layout.user.main')
 
-<!-- @section('tittle') @lang('Informasi - jenis Kulit') @endsection -->
+@section('tittle') @lang('Riwayat Diagnosa') @endsection
 
 @section('container')
 
@@ -36,9 +36,9 @@
                             <td>{{$r->tanggal_konsultasi}}</td>
                             <td>
                               <form>
-                                <a href="" class="btn btn-success btn-sm">
+                                <a href="{{ url('/hasil/'.$r->id) }}" class="btn btn-success btn-sm">
                                 <i class="fa fa-eye"></i> Detail</a>
-                                <a href="" class="btn btn-info btn-sm">
+                                <a href="{{ url('/hasil_pdf/'.$r->id) }}" class="btn btn-info btn-sm">
                                 <i class="fa fa-print"></i> cetak</a>
                               </form>
                             </td>

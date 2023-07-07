@@ -38,14 +38,14 @@
                             <td>{{$r->telp}}</td>
                             <td>{{$r->created_at->format('d-m-Y')}}</td>
                             <td>
-                              <form >
-                                <a href="" class="btn btn-success btn-sm">
+                              <form action="/admin/riwayat-diagnosa/{{$r->id}}" method="POST">
+                                <a href="{{ url('/hasil/'.$r->id) }}"  class="btn btn-success btn-sm">
                                 <i class="fa fa-eye"></i> Detail</a>
-                                <a href="" class="btn btn-info btn-sm">
+                                <a href="{{ url('/hasil_pdf/'.$r->id) }}" class="btn btn-primary btn-sm">
                                 <i class="fa fa-print"></i> cetak</a>
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" data-id="{{ $r->id }}" class="btn btn-danger btn-sm" onclick="deleteConfirm(event)">
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="deleteConfirm(event)">
                                 <i class="fa fa-trash"></i> Hapus</button>
                               </form>
                             </td>

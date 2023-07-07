@@ -1,5 +1,6 @@
 @extends('layout.user.main')
 
+@section('tittle') @lang('Identitas') @endsection
 
 @section('container')
 

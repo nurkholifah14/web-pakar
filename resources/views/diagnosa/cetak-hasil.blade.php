@@ -1,7 +1,4 @@
-@extends('layout.user.main')
 
-
-@section('container')
 <div>
     <section>
         <div class="container pt-5 mb-5">
@@ -26,59 +23,49 @@
                                                                     <strong>HASIL DIAGNOSA </strong>
                                                                 </center>
                                                             </div>
+                                                            <hr class="field-hr">
                                                             <br>
-                                                            <style>
-                                                            #jarak{
-                                                                padding-left:0px;padding-right:0px;vertical-align:top;
-                                                            }
-                                                            #v_top{
-                                                                vertical-align:top;
-                                                            }
-                                                            </style>
-
                                                             <table class="table" width="100%">
-                                                                <tbody>
+                                                                <tbody >
                                                                     <tr>
-                                                                        <th width="30%" id="v_top">NO. DIAGNOSA</th>
-                                                                        <th width="2%" id="jarak">:</th>
-                                                                        <td width="87%" id="jarak">{{ $riwayat->id }}</td>
+                                                                        <th style="text-align:left">NO. DIAGNOSA</th>
+                                                                        <th>:</th>
+                                                                        <td>{{ $riwayat->id }}</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th id="v_top">TANGGAL KONSULTASI</th>
-                                                                        <th id="jarak">:</th>
-                                                                        <td id="jarak">{{ $riwayat->created_at->format('d-m-Y') }}</td>
+                                                                        <th style="text-align:left">NAMA LENGKAP</th>
+                                                                        <th>:</th>
+                                                                        <td>{{ $riwayat->nama }}</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th id="v_top">NAMA LENGKAP</th>
-                                                                        <th id="jarak">:</th>
-                                                                        <td id="jarak">{{ $riwayat->nama }}</td>
+                                                                        <th style="text-align:left">UMUR</th>
+                                                                        <th>:</th>
+                                                                        <td>{{ $riwayat->umur }}</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th id="v_top">UMUR</th>
-                                                                        <th id="jarak">:</th>
-                                                                        <td id="jarak">{{ $riwayat->umur }}</td>
+                                                                        <th style="text-align:left">NO. HP</th>
+                                                                        <th>:</th>
+                                                                        <td>{{ $riwayat->telp }}</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th id="v_top">NO. HP</th>
-                                                                        <th id="jarak">:</th>
-                                                                        <td id="jarak">{{ $riwayat->telp }}</td>
+                                                                        <th style="text-align:left">ALAMAT</th>
+                                                                        <th>:</th>
+                                                                        <td>{{ $riwayat->alamat }}</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th id="v_top">ALAMAT</th>
-                                                                        <th id="jarak">:</th>
-                                                                        <td id="jarak">{{ $riwayat->alamat }}</td>
+                                                                        <th style="text-align:left">TANGGAL KONSULTASI</th>
+                                                                        <th>:</th>
+                                                                        <td>{{ $riwayat->created_at->format('d-m-Y') }}</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th id="v_top">HASIL</th>
-                                                                        <th id="jarak">:</th>
-                                                                        <td id="jarak">
-                                                                        <p style="white-space: pre-wrap;">Berdasarkan gejala yang <b>{{ $riwayat->nama }}</b> rasakan, Jenis kulit yang dimiliki <b>{{ $riwayat->hasil_diagnosa }}</b>.</p>    </td>
+                                                                        <th style="text-align:left">HASIL</th>
+                                                                        <th>:</th>
+                                                                        <td><p>Berdasarkan gejala yang <b>{{ $riwayat->nama }}</b> rasakan, Jenis kulit yang dimiliki <b>Jenis {{ $riwayat->hasil_diagnosa }}</b>.</p></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th id="v_top">REKOMENDASI TREATMENT</th>
-                                                                        <th id="jarak">:</th>
-                                                                        <td id="jarak">
-                                                                        <p style="white-space: pre-wrap;">{!! $riwayat->rekomendasi_treatment !!}</p>    </td>
+                                                                        <th style="text-align:left; width: 250px; ">REKOMENDASI TREATMENT</th>
+                                                                        <th >:</th>
+                                                                        <td style="width: 380px"><p>{!! $riwayat->rekomendasi_treatment !!}</p></td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
@@ -99,5 +86,3 @@
         </div>
     </section>
 </div>
-
-@endsection

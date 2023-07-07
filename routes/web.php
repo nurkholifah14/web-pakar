@@ -28,10 +28,11 @@ Route::group(["middleware" => ["can:user"]], function() {
     Route::get('/identitas', function (){
         return view('/diagnosa/identitas');
     });
-    Route::get('/hasil/{id}', [DiagnosaController::class, 'hasil_diagnosa']);
-    Route::get('/hasil/cetak_pdf', [DiagnosaController::class, 'cetak_pdf']);
     Route::get('/riwayat', [DiagnosaController::class, 'riwayatDiagnosa']);
 });
+
+Route::get('/hasil/{id}', [DiagnosaController::class, 'hasil_diagnosa']);
+Route::get('/hasil_pdf/{id}', [DiagnosaController::class, 'cetak_pdf']);
 
 Route::get('/', function () {   
     return view('/user/landingpage/landing');
@@ -60,6 +61,7 @@ Route::group(["middleware" => ["hakakses"]], function() {
         Route::resource('data-pengguna', PenggunaController::class);
         Route::resource('data-diagnosa', DataDiagnosaController::class);
         Route::get('/admin/riwayat-diagnosa', [DiagnosaController::class, 'riwayat_diagnosa']);
+        Route::delete('/admin/riwayat-diagnosa/{id}', [DiagnosaController::class, 'destroy']);
     });
 });
 

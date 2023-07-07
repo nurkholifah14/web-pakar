@@ -252,18 +252,18 @@ class DiagnosaController extends Controller
         return view('diagnosa.hasil', compact('riwayat'));
     }
 
-    public function cetak_pdf()
+    public function cetak_pdf($id)
     {
         $riwayat = RiwayatDiagnosa::where('id', $id)->where('hasil_diagnosa', '!=', null)->first();
 
-        $pdf = PDF::loadview('diagnosa.cetak-hasil', ['cetakriwayat' => $riwayat]);
-        return $pdf->stream('Laporan_Hasil_Diagnosa');
+        $pdf = PDF::loadview('diagnosa.cetak-hasil', ['riwayat' => $riwayat]);
+        return $pdf->stream('Hasil-Diagnosa');
     }
 
 
     public function riwayat_diagnosa()
     {
-        $riwayat = RiwayatDiagnosa::orderBy('created_at', 'asc')->paginate(20);
+        $riwayat = RiwayatDiagnosa::orderBy('created_at', 'asc')->paginate(10);
         return view('riwayat_diagnosa.index', compact('riwayat'));
     }
 
@@ -341,6 +341,7 @@ class DiagnosaController extends Controller
     public function destroy($id)
     {
         RiwayatDiagnosa::destroy($id);
-        return redirect('/riwayat-diagnosa');
+        Alert::success('Berhasil', 'Data Berhasil dihapus');
+        return redirect('/admin/riwayat-diagnosa');
     }
 }

@@ -6,6 +6,7 @@ return [
     "Informasi - Treatment" => "Informasi - treatment",
     "Tentang" => "Tentang",
     "Contact" => "Contact",
+    "Identitas" => "Identitas",
     "Dashboard - Admin" => "Dashboard - Admin",
     "Data Pengguna" => "Data Pengguna",
     "Data Gejala Kulit" => "Data Gejala Kulit",

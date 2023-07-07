@@ -20,7 +20,7 @@
                     <a class="dropdown-item" href="" ><i class="fas fa-user fa-fw"></i> Profile</a>
                     <a class="dropdown-item" href="" ><i class="fas fa-key fa-fw"></i>  Ubah Password</a>
                     <li class="divider"></li>
-                    <a class="dropdown-item" href="/logout" > <i class="fas fa-switch fa-fw "></i> Logout</a>
+                    <a class="dropdown-item text-danger" href="/logout" > <i class="fas fa-power-off fa-fw text-danger"></i> Logout</a>
                 </div>
             </form>
         </li>
