@@ -71,6 +71,7 @@ Route::group(["middleware" => ["guest"]], function() {
 });
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
-Route::get('/logout', [LoginController::class, 'logout']);
 Route::post('/update-password', [LoginController::class, 'updatePassword']);
+Route::post('/update-profile', [LoginController::class, 'updateProfile']);
+Route::get('/logout', [LoginController::class, 'logout']);
 

@@ -53,6 +53,19 @@ class LoginController extends Controller
         return redirect('/admin');
     }
 
+    public function updateProfile(Request $request)
+    {
+        $request->validate([
+            "name" => "required|max:255",
+            "email" => "required",
+        ]);
+        User::where("id", Auth::user()->id)->update([
+            "name" => $request['name'],
+            "email" => $request['email'],
+           ]);
+        return redirect('/admin');
+
+    }
 
     public function logout(Request $request) 
     {
