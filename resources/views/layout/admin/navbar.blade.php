@@ -18,7 +18,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="" ><i class="fas fa-user fa-fw"></i> Profile</a>
-                    <a class="dropdown-item" href="" ><i class="fas fa-key fa-fw"></i>  Ubah Password</a>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-default"href="" ><i class="fas fa-key fa-fw"></i>  Ubah Password</a>
                     <li class="divider"></li>
                     <a class="dropdown-item text-danger" href="/logout" > <i class="fas fa-power-off fa-fw text-danger"></i> Logout</a>
                 </div>
@@ -26,3 +26,41 @@
         </li>
     </ul>
 </nav>
+
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Ubah Password</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="/update-password">
+                @csrf
+                    <div class="mb-3">
+                        <label for="old_password">Old Password</label>
+                        <input id="old_password" type="password" 
+                        class="form-control @error('old_password') is-invalid @enderror" name="old_password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1">New Password</label>
+                        <input id="new_password" type="password" 
+                        class="form-control @error('new_password') is-invalid @enderror" name="new_password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password_confirmation">New Password Confirmation</label>
+                        <input id="password_confirmation" type="password" 
+                        class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation">
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="submit" class="btn btn-primary col-12">Update Password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

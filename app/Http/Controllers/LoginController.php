@@ -41,6 +41,19 @@ class LoginController extends Controller
         }
     }
 
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'old_password' => 'required|current_password',
+            'new_password' => 'required|min:5',
+        ]);
+        User::where("id", Auth::user()->id)->update([
+            "password" => bcrypt($request["new_password"])
+           ]);
+        return redirect('/admin');
+    }
+
+
     public function logout(Request $request) 
     {
         Auth::logout();

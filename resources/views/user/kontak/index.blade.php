@@ -5,7 +5,7 @@
 @section('container')
 
   <!-- ======= Contact Section ======= -->
-  <section id="contact" class="contact">
+  <section id="contact" class="contact mt-5">
 
     <div class="container" data-aos="fade-up">
 
