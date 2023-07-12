@@ -45,13 +45,13 @@
                     <i class="bi bi-clock"></i>
                     <h3>Jam Buka</h3>
                     <p>
-                        Senin     09.00 - 17.00<br>
+                        Senin    09.00 - 17.00<br>
                         Selasa   09:00 - 17.00<br>
-                        Rabu      09:00 - 17.00<br>
-                        Kamis    Tutup<br>
+                        Rabu     09:00 - 17.00<br>
+                        Kamis    09:00 - 17.00<br>
                         Jumat    09.00 - 17.00<br>
-                        Sabtu     08.00 - 16.00<br>
-                        Minggu  08.00 - 17.00<br>
+                        Sabtu    08.00 - 16.00<br>
+                        Minggu   Tutup<br>
                     </p>
                 </div>
                 </div>

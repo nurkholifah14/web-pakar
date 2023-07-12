@@ -1,19 +1,19 @@
-<header id="header" class="header fixed-top bg-info">
+<header id="header" class="header fixed-top bg-warning">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       @auth
       @can("admin")
       <a href="/admin" class="logo d-flex align-items-center">
-        <span>Sipakar</span>
+        <span>Diva Glam</span>
       </a>
       @endcan
       @can("user")
       <a href="/" class="logo d-flex align-items-center">
-        <span>Sipakar</span>
+        <span>Diva Glam</span>
       </a>
       @endcan
       @else
       <a href="/" class="logo d-flex align-items-center">
-        <span>Sipakar</span>
+        <span>Diva Glam</span>
       </a>
       @endauth
       <nav id="navbar" class="navbar">

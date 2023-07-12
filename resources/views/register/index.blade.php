@@ -4,7 +4,7 @@
 
 <div class="login-box">
     <!-- /.login-logo -->
-    <div class="card card-outline bg-lightblue">
+    <div class="card card-outline bg-warning">
         <div class="text-light p-3">
             <b>Registration Form</b>
         </div>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        <button type="submit" class="btn btn-warning btn-block">Register</button>
                     </div>
                 <!-- /.col nn -->
                 </div>

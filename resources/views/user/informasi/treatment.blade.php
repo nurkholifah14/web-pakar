@@ -22,7 +22,7 @@
           @foreach($treatment as $treatments)
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <div class="alert alert-info alert-dismissible" role="alert">
+                <div class="alert alert-warning alert-dismissible" role="alert">
                   <center>
                       <strong><h4><b>{{$treatments->nama_treatment}}</b></h4></strong>
                   </center>
@@ -33,6 +33,8 @@
                   <p>{!! $treatments->fungsi!!}</p>
                   <h3>Harga</h3>
                   <h4>{{$treatments->harga}}</h4>
+                  <h3>Deskripsi</h3>
+                  <p>{{$treatments->deskripsi}}</p>
                 </div>
               </div>
             </div>

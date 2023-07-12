@@ -11,7 +11,7 @@
             <p class="alert alert-danger">{{session('loginError')}}<i class="fas fa-close"></i></p>
         @endif
         <!-- /.login-logo -->
-        <div class="card card-outline bg-lightblue">
+        <div class="card card-outline bg-warning">
             <div class="text-light p-3">
                 <b>LOGIN</b>
             </div>
@@ -43,12 +43,13 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                            <button type="submit" class="btn btn-warning btn-block">Sign In</button>
                         </div>
                     <!-- /.col -->
                     </div>
                 </form>
                 <small class="d-block text-center mt-3">Not registered? <a href="/register">Register Now!</a></small>
+                <small class="d-block text-center"><a href="/">Back to Dashboard</a></small>
             </div>
             <!-- /.login-card-body -->
         </div>

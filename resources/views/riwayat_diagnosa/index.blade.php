@@ -17,7 +17,7 @@
           <div class="card-body table-responsive p-3">
                 <table class="table table-hover text-nowrap table-bordered">
                     <thead>
-                        <tr class="bg-info">
+                        <tr class="bg-warning">
                         <th scope="col">No</th>
                         <th scope="col">Nama Lengkap</th>
                         <th scope="col">Alamat</th>

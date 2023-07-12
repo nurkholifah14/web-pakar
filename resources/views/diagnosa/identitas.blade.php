@@ -8,7 +8,7 @@
   <div class="col-lg-6 offset-lg-3 main-content">
     <div class="card">
       <div class="card-body">
-          <div class="alert alert-info alert-dismissible text-center" role="alert">
+          <div class="alert alert-warning alert-dismissible text-center" role="alert">
             <strong><h4><b>DATA IDENTITAS</b></h4></strong>
           </div>        
           <!-- form start -->

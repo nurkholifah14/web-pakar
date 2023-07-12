@@ -30,7 +30,7 @@
                                                         <div class="panel-body">
                                                             <fieldset class="content-group">
                                                                 <div class="field-box-content">
-                                                                    <div class="alert alert-info alert-dismissible" role="alert">
+                                                                    <div class="alert alert-warning alert-dismissible" role="alert">
                                                                         <center>
                                                                             <strong>HASIL DIAGNOSA </strong>
                                                                         </center>
@@ -161,7 +161,7 @@
                                                         <div class="panel-body">
                                                             <fieldset class="content-group">
                                                                 <div class="field-box-content">
-                                                                    <div class="alert alert-info alert-dismissible" role="alert">
+                                                                    <div class="alert alert-warning alert-dismissible" role="alert">
                                                                         <center>
                                                                             <strong>HASIL DIAGNOSA </strong>
                                                                         </center>
