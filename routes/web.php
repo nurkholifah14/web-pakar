@@ -10,6 +10,7 @@ use App\Http\Controllers\TreatmentController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\DataDiagnosaController;
 use App\Http\Controllers\DiagnosaController;
+use App\Http\Controllers\InfodiskonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,8 +42,8 @@ Route::get('/', function () {
 Route::get('/informasi-JenisKulit', function () {
     return view('/user/informasi/jeniskulit');
 });
-
 Route::get('informasi-Treatment', [TreatmentController::class, 'treatment']);
+Route::get('informasi-Diskon', [InfodiskonController::class, 'diskon']);
 
 Route::get('/tentang', function () {
     return view('/user/tentang/index');
@@ -62,6 +63,15 @@ Route::group(["middleware" => ["hakakses"]], function() {
         Route::resource('data-diagnosa', DataDiagnosaController::class);
         Route::get('/admin/riwayat-diagnosa', [DiagnosaController::class, 'riwayat_diagnosa']);
         Route::delete('/admin/riwayat-diagnosa/{id}', [DiagnosaController::class, 'destroy']);
+
+        //diskon
+        Route::get('/diskon', [InfodiskonController::class, 'index'])->name('diskon');
+        Route::get('/create', [InfodiskonController::class, 'create'])->name('diskon.create');
+        Route::post('/store', [InfodiskonController::class, 'store'])->name('diskon.store');
+        Route::get('/edit/{id}', [InfodiskonController::class, 'edit'])->name('diskon.edit');
+        Route::post('/update/{id}', [InfodiskonController::class, 'update'])->name('diskon.update');
+        Route::delete('/destroy/{id}', [InfodiskonController::class, 'destroy'])->name('diskon.destroy');
+
     });
 });
 

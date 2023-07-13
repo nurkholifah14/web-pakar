@@ -37,6 +37,7 @@
               <ul>
                 <li><a class="nav-link {{ request()->is('informasi-JenisKulit') ? 'active' : '' }}" href="/informasi-JenisKulit">Jenis Kulit</a></li>
                 <li><a class="nav-link {{ request()->is('informasi-Treatment') ? 'active' : '' }}" href="/informasi-Treatment">Treatment</a></li>
+                <li><a class="nav-link {{ request()->is('informasi-Diskon') ? 'active' : '' }}" href="/informasi-Diskon">Diskon</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link {{ request()->is('tentang') ? 'active' : '' }}" href="/tentang">Tentang</a></li>

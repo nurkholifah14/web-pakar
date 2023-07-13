@@ -40,8 +40,8 @@
             <div class="card-footer">
             <div class="row">
               <div class="col-12">
-                <!-- <button href="/gejalakulit" class="btn btn-secondary">Cancel</button> -->
                 <input type="submit" href="" value="Ubah" class="btn btn-success float-right">
+                <a class="btn btn-secondary float-right" href="/gejalakulit">Cancel</a>
               </div>
             </div>
             </div>

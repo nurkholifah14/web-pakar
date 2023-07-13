@@ -76,8 +76,12 @@ class DataDiagnosaController extends Controller
      */
     public function edit($id)
     {
+        
+        $jeniskulit = Jeniskulit::all();
+        $gejalakulit = Gejalakulit::all();
         $edit = Diagnosa::find($id);
-        return view('admin.data_diagnosa.edit', compact('edit'));
+    
+        return view('admin.data_diagnosa.edit', compact('jeniskulit', 'gejalakulit', 'edit'));
     }
 
     /**

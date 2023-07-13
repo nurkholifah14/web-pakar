@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
+use App\Models\Diskon;
 use Illuminate\Support\Facades\Storage;
-use App\Models\Treatment;
+// use App\Models\Category;
 use RealRashid\SweetAlert\Facades\Alert;
 
-
-class TreatmentController extends Controller
+class InfodiskonController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,14 +17,14 @@ class TreatmentController extends Controller
      */
     public function index()
     {
-        $treatment = Treatment::orderBy('created_at', 'asc')->paginate(10);
-        return view('admin.informasi.treatment.datatreatment', compact('treatment'));
+        $diskon = Diskon::orderBy('created_at', 'asc')->paginate(10);
+        return view('admin.informasi.diskon.index', compact('diskon'));
     }
 
-    public function treatment()
+    public function diskon()
     {
-        $treatment = Treatment::get();
-        return view('user.informasi.treatment', compact('treatment'));
+        $diskon = Diskon::get();
+        return view('user.informasi.diskon', compact('diskon'));
     }
 
     /**
@@ -36,7 +34,9 @@ class TreatmentController extends Controller
      */
     public function create()
     {
-        return view('admin.informasi.treatment.tambahtreatment');
+        // $categories = Category::all();
+        // return view('admin.informasi.diskon.tambahdiskon', compact('categories'));
+        return view('admin.informasi.diskon.tambah');
     }
 
     /**
@@ -48,23 +48,21 @@ class TreatmentController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama_treatment' => 'required|max:255',
             'gambar' => 'required|image|mimes:png,jpg,jpeg',
-            'fungsi' => 'required|max:255',
-            'harga' => 'required',
-            'deskripsi' => 'required|max:255',
         ]);
 
-        if($request->file('gambar')){
-            $validatedData['gambar'] = $request->file('gambar')->store('post-treatments');
-        }
-
-        Treatment::create($validatedData);
         
+        if ($request->file('gambar')) {
+            $validatedData['gambar'] = $request->file('gambar')->store('post-diskon');
+        }
+        
+        Diskon::create($validatedData);        
+    
         Alert::success('Berhasil', 'Data Berhasil ditambahkan');
-        return redirect('/treatment');
+        return redirect('diskon');
     }
-
+    
+    
     /**
      * Display the specified resource.
      *
@@ -84,8 +82,8 @@ class TreatmentController extends Controller
      */
     public function edit($id)
     {
-        $edit = Treatment::find($id);
-        return view('admin.informasi.treatment.edittreatment', compact('edit'));
+        $edit = Diskon::find($id);
+        return view('admin.informasi.diskon.edit', compact('edit'));
     }
 
     /**
@@ -95,14 +93,10 @@ class TreatmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Treatment $treatment)
+    public function update(Request $request, $id)
     {
         $rules = [
-            'nama_treatment' => 'required|max:255',
             'gambar' => 'image|mimes:png,jpg,jpeg',
-            'fungsi' => 'required|max:255',
-            'harga' => 'required',
-            'deskripsi' => 'required|max:255',
         ];
 
         $validatedData = $request->validate($rules);
@@ -112,15 +106,14 @@ class TreatmentController extends Controller
                 Storage::delete($request->oldImage);
             }
 
-            $validatedData['gambar'] = $request->file('gambar')->store('post-treatments');
+            $validatedData['gambar'] = $request->file('gambar')->store('post-diskon');
         }
 
-            Treatment::where('id', $treatment->id)
+            Diskon::where('id', $request->id)
                         ->update($validatedData);
 
         Alert::success('Berhasil', 'Data Berhasil diubah');
-        return redirect('/treatment');
-
+        return redirect('diskon');
     }
 
     /**
@@ -129,13 +122,18 @@ class TreatmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Treatment $treatment)
+    public function destroy($id)
     {
-        if($treatment->gambar) {
-            Storage::delete($treatment->gambar);
-        }
-        Treatment::destroy($treatment->id);
-        Alert::success('Berhasil', 'Data Berhasil dihapus');
-        return redirect('/treatment');
+            $diskon = Diskon::findOrFail($id);
+        
+            if ($diskon->gambar) {
+                Storage::delete($diskon->gambar);
+            }
+        
+            $diskon->delete();
+        
+            Alert::success('Berhasil', 'Data Berhasil dihapus');
+            return redirect('diskon');
+        
     }
 }

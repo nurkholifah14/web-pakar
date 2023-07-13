@@ -600,7 +600,6 @@ section {
 .values .box {
   padding: 30px;
   box-shadow: 0px 0 5px rgba(180, 138, 13, 0.538);
-  text-align: center;
   transition: 0.3s;
   height: 100%;
 }
@@ -613,6 +612,7 @@ section {
 
 .values .box h3 {
   font-size: 24px;
+  text-align: center;
   color: #012970;
   font-weight: 700;
   margin-bottom: 18px;
@@ -1102,8 +1102,8 @@ section {
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-  color: #4154f1;
-  border-color: #4154f1;
+  color: #c98a0b;
+  border-color: #c98a0b;
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -1201,7 +1201,7 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-links a {
   color: #fff;
-  background: #4154f1;
+  background: #c98a0b;
   margin: 10px 2px;
   width: 36px;
   height: 36px;
@@ -1218,7 +1218,7 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  background: #5969f3;
+  background: #f1b641;
 }
 
 .portfolio .portfolio-wrap:hover img {

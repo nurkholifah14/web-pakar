@@ -64,6 +64,7 @@
             <div class="row">
               <div class="col-12">
                 <input type="submit" href="" value="Simpan" class="btn btn-success float-right">
+                <a class="btn btn-secondary float-right" href="/treatment">Cancel</a>
               </div>
             </div>
             </div>

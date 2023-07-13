@@ -41,7 +41,7 @@
               <div class="row">
                 <div class="col-12">
                   <input type="submit" href="" value="Simpan" class="btn btn-success float-right">
-                  <!-- <button class="btn btn-secondary float-right">Cancel</button> -->
+                  <a class="btn btn-secondary float-right" href="/gejalakulit">Cancel</a>
                 </div>
               </div>
             </div>

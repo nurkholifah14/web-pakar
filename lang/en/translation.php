@@ -4,6 +4,7 @@ return [
     "Home" => "Home",
     "Informasi - Jenis kulit" => "Informasi - Jenis Kulit",
     "Informasi - Treatment" => "Informasi - treatment",
+    "Informasi - Diskon" => "Informasi - Diskon",
     "Tentang" => "Tentang",
     "Contact" => "Contact",
     "Identitas" => "Identitas",

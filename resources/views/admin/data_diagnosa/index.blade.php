@@ -35,7 +35,11 @@
                         <tr>
                             <td>{{$index + $diagnosa->firstItem() }}</td>
                             <td>{{$diagnoses->kode_jeniskulit}}</td>
-                            <td>{{$diagnoses->premis->kode_gejala}}</td>
+                            <td>
+                                @if ($diagnoses->premis)
+                                    {{ $diagnoses->premis->kode_gejala }}
+                                @endif
+                            </td>
                             <td>
                                 <form action="data-diagnosa/{{$diagnoses->id}}" method="POST">
                                     <a href="{{ route('data-diagnosa.edit',$diagnoses->id)}}" class="btn btn-warning btn-sm">

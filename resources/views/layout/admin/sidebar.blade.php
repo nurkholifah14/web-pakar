@@ -17,7 +17,7 @@
                         <p> Dashboard </p>
                     </a>
                 </li>
-                <li class="nav-header">INFORMASI</li>
+                <li class="nav-header">DATA</li>
                     <li class="nav-item">
                         <a href="/data-pengguna" class="nav-link {{ request()->is('data-pengguna') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-user"></i>
@@ -42,12 +42,18 @@
                             <p> Data Diagnosa</p>
                         </a>
                     </li>
+                    <li class="nav-header">INFORMASI</li>
                     <li class="nav-item">
                         <a href="/treatment" class="nav-link {{ request()->is('treatment') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-folder"></i>
-                            <p> Informasi Treatments </p>
+                            <p>Treatments </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="diskon" class="nav-link {{ request()->is('diskon') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-tags"></i>
+                            <p>Diskon</p>
+                        </a>
                     </li>
                 <li class="nav-header">REPORT</li>
                     <li class="nav-item">
