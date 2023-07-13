@@ -15,11 +15,11 @@
   <section class="content">
     <div class="card">
         <div class="card-header pt-3">
-          <a href="/gejalakulit/create"  method="POST" class="btn btn-info bg-lightblue  btn-md"><i class="fa fa-plus"></i> Tambah</a>
+          <a href="/gejalakulit/create"  method="POST" class="btn btn-primary btn-md"><i class="fa fa-plus"></i> Tambah</a>
           <div class="card-body table-responsive p-3">
                 <table class="table table-hover text-nowrap table-bordered">
                     <thead>
-                        <tr class="bg-info">
+                        <tr class="bg-warning">
                         <th scope="col">No</th>
                         <th scope="col">Kode Gejala</th>
                         <th scope="col">Nama Gejala</th>

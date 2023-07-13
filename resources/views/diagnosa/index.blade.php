@@ -12,7 +12,7 @@
             <div class="card overflow-hidden shadow rounded-4 border-0">
                 <div class="card">
                     <div class="card-body">
-                        <div class="alert alert-info alert-dismissible" role="alert">
+                        <div class="alert alert-warning alert-dismissible" role="alert">
                             <center>
                                 <strong><h4>Konsultasi</h4></strong>
                             </center>

@@ -14,7 +14,7 @@
     
     <section class="content ">
       <div class="ml-0 mt-3">
-      <div class="card card-lightblue bg-light">
+      <div class="card card-warning bg-light">
         <div class="card-header">
           <h3 class="card-title">Ubah Data Jenis Kulit</h3>
         </div>

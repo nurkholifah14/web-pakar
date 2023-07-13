@@ -14,7 +14,7 @@
     
     <section class="content ">
       <div class="ml-3 mt-3">
-      <div class="card card-lightblue bg-light">
+      <div class="card card-warning bg-light">
         <div class="card-header">
           <h3 class="card-title">Ubah Data Diagnosa</h3>
         </div>

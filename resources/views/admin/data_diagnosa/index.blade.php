@@ -16,11 +16,11 @@
   <section class="content">
     <div class="card">
         <div class="card-header p-3">
-            <a href="/data-diagnosa/create"  method="POST" class="btn btn-info bg-lightblue  btn-md"><i class="fa fa-plus"></i> Tambah</a>
+            <a href="/data-diagnosa/create"  method="POST" class="btn btn-primary btn-md"><i class="fa fa-plus"></i> Tambah</a>
             <div class="card-body table-responsive p-3">
                 <table class="table table-hover text-nowrap table-bordered">
                     <thead>
-                        <tr class="bg-info">
+                        <tr class="bg-warning">
                             <th scope="col">No</th>
                             <th scope="col">Kode jenis Kulit</th>
                             <th scope="col">Kode Gejala</th>
