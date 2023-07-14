@@ -27,7 +27,7 @@
                   <select name="kode_jeniskulit" class="form-control @error('kode_gejala') is-invalid @enderror" value="{{ old('kode_jeniskulit', '') }}" >
                     <option value="">- pilih -</option>
                     @foreach($jeniskulit as $j)
-                      <option value="{{$j->kode_jenis}}">{{$j->kode_jenis}}</option>
+                      <option value="{{$j->kode_jenis}}">{{$j->nama_jeniskulit}}</option>
                     @endforeach
                   </select>
                   @error('kode_jeniskulit')
@@ -39,7 +39,7 @@
                   <select name="kode_gejala" class="form-control @error('kode_gejala') is-invalid @enderror" value="{{ old('kode_gejala', '') }}" >
                     <option value="">- pilih -</option>
                     @foreach($gejalakulit as $g)
-                      <option value="{{$g->id}}">{{$g->kode_gejala}}</option>
+                      <option value="{{$g->id}}">{{$g->gejala}}</option>
                     @endforeach
                   </select>
                   @error('kode_gejala')

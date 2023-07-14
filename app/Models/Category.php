@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Diskon;
 
 class Category extends Model
 {
@@ -15,8 +16,7 @@ class Category extends Model
         'slug',
     ];
 
-    // public function diskon()
-    // {
-    //     return $this->hasMany(Category::class, 'category_id', 'name');
-    // }
+    public function diskon(){
+        return $this->hasMany(Diskon::class);
+    }
 }

@@ -20,7 +20,7 @@
                         <tr class="bg-warning">
                         <th scope="col-md-3">No</th>
                         <th scope="col-md-3">Diskon</th>
-                        <!-- <th scope="col-md-3">Kategori</th> -->
+                        <th scope="col-md-3">Kategori</th>
                         <th scope="col-md-3">Aksi</th>
                         </tr>
                     </thead>
@@ -32,6 +32,7 @@
                         <tr>
                             <td>{{$index + $diskon->firstItem() }}</td>
                             <td><img src="{{asset('storage/' . $diskons->gambar)}}" width="100"></td>
+                            <td>{{ $diskons->category->name}}</td>
                             <td>
                               <form action="{{ route('diskon.destroy', $diskons->id) }}" method="POST">
                                 <a href="{{ route('diskon.edit',$diskons->id)}}" class="btn btn-warning btn-sm">

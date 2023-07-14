@@ -34,10 +34,14 @@
                         @foreach($diagnosa as $index => $diagnoses)
                         <tr>
                             <td>{{$index + $diagnosa->firstItem() }}</td>
-                            <td>{{$diagnoses->kode_jeniskulit}}</td>
+                            <td>
+                                @if ($diagnoses->goal)
+                                    {{ $diagnoses->goal->nama_jeniskulit}}
+                                @endif
+                            </td>
                             <td>
                                 @if ($diagnoses->premis)
-                                    {{ $diagnoses->premis->kode_gejala }}
+                                    {{ $diagnoses->premis->gejala }}
                                 @endif
                             </td>
                             <td>

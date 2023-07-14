@@ -30,6 +30,21 @@
                   <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
               </div>
+              <div class="form-group">
+    <label for="category_id">Kategori</label>
+    <select name="category_id" class="form-control @error('category_id') is-invalid @enderror">
+        <option value="">- pilih -</option>
+        @foreach($categories as $category)
+            <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                {{ $category->name }}
+            </option>
+        @endforeach
+    </select>
+    @error('category_id')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
             <div class="card-footer">
             <div class="row">
               <div class="col-12">

@@ -20,15 +20,16 @@
     <div class="col-lg-12 d-flex justify-content-center">
       <ul id="portfolio-flters">
         <li data-filter="*" class="filter-active">All</li>
-        <li data-filter=".filter-treatment">Treatment</li>
-        <li data-filter=".filter-skincare">Skincare</li>
+        @foreach($categories as $category)
+            <li data-filter=".{{ $category->slug }}">{{ $category->name }}</li>
+        @endforeach
       </ul>
     </div>
   </div>
 
   <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
   @foreach($diskon as $diskons)
-    <div class="col-lg-4 col-md-6 portfolio-item filter-treatment">
+    <div class="col-lg-4 col-md-6 portfolio-item {{ $diskons->category->slug}}">
       <div class="portfolio-wrap">
         <img src="{{asset('storage/' . $diskons->gambar)}}"  class="img-fluid" alt="">
         <div class="portfolio-info">

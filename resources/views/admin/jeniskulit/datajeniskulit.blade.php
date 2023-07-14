@@ -15,7 +15,7 @@
     <section class="content">
         <div class="card">
             <div class="card-header p-3">
-                <a href="/jeniskulit/create" method="POST" class="btn btn-warning btn-md"><i class="fa fa-plus"></i> Tambah</a>
+                <a href="/jeniskulit/create" method="POST" class="btn btn-primary btn-md"><i class="fa fa-plus"></i> Tambah</a>
                 <div class="card-body table-responsive p-3">
                     <table class="table table-hover text-nowrap table-bordered">
                         <thead>

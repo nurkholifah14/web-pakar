@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Diskon;
 use Illuminate\Support\Facades\Storage;
-// use App\Models\Category;
+use App\Models\Category;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class InfodiskonController extends Controller
@@ -23,9 +23,12 @@ class InfodiskonController extends Controller
 
     public function diskon()
     {
-        $diskon = Diskon::get();
-        return view('user.informasi.diskon', compact('diskon'));
+        $diskon = Diskon::with('category')->get();
+        return view('user.informasi.diskon', [
+            'diskon' => Diskon::all(),  'categories'=>Category::get(),
+        ]);
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -34,9 +37,9 @@ class InfodiskonController extends Controller
      */
     public function create()
     {
-        // $categories = Category::all();
-        // return view('admin.informasi.diskon.tambahdiskon', compact('categories'));
-        return view('admin.informasi.diskon.tambah');
+        $categories = Category::all();
+        $diskon = Diskon::all();
+        return view('admin.informasi.diskon.tambah', compact('categories', 'diskon'));
     }
 
     /**
@@ -49,6 +52,7 @@ class InfodiskonController extends Controller
     {
         $validatedData = $request->validate([
             'gambar' => 'required|image|mimes:png,jpg,jpeg',
+            'category_id' => 'required|exists:categories,id',
         ]);
 
         
@@ -82,8 +86,10 @@ class InfodiskonController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::all();
+        $diskon = Diskon::all();
         $edit = Diskon::find($id);
-        return view('admin.informasi.diskon.edit', compact('edit'));
+        return view('admin.informasi.diskon.edit', compact('categories', 'diskon', 'edit'));
     }
 
     /**
@@ -97,6 +103,7 @@ class InfodiskonController extends Controller
     {
         $rules = [
             'gambar' => 'image|mimes:png,jpg,jpeg',
+            'category_id' => 'required|exists:categories,id',
         ];
 
         $validatedData = $request->validate($rules);
