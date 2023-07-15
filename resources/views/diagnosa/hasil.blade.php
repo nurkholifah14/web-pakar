@@ -257,6 +257,14 @@
                                                                             <button type="button" class="btn btn-success btn-lg"><i class="fab fa-whatsapp"></i> Konsultasi </button>
                                                                             <a href="{{ url('/hasil_pdf/'.$riwayat['id']) }}" class="btn btn-primary btn-lg"><i class="fa fa-print"></i> Cetak Hasil Diagnosa </a>
                                                                         </div>
+                                                                        @auth
+                                                                        @can("admin")
+                                                                        <a class="d-block text-center mt-3"href="/admin">Back to Dashboard</a>
+                                                                        @endcan
+                                                                        @can("user")
+                                                                        <a class="d-block text-center mt-3"href="/riwayat">Kembali</a>
+                                                                        @endcan
+                                                                        @endauth
                                                                     </div>
                                                                 </div>
                                                             </fieldset>

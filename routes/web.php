@@ -64,14 +64,16 @@ Route::group(["middleware" => ["hakakses"]], function() {
         Route::get('/admin/riwayat-diagnosa', [DiagnosaController::class, 'riwayat_diagnosa']);
         Route::delete('/admin/riwayat-diagnosa/{id}', [DiagnosaController::class, 'destroy']);
 
+    
         //diskon
-        Route::get('/diskon', [InfodiskonController::class, 'index'])->name('diskon');
-        Route::get('/create', [InfodiskonController::class, 'create'])->name('diskon.create');
-        Route::post('/store', [InfodiskonController::class, 'store'])->name('diskon.store');
-        Route::get('/edit/{id}', [InfodiskonController::class, 'edit'])->name('diskon.edit');
-        Route::post('/update/{id}', [InfodiskonController::class, 'update'])->name('diskon.update');
-        Route::delete('/destroy/{id}', [InfodiskonController::class, 'destroy'])->name('diskon.destroy');
-
+        Route::group(['prefix' => '/diskon'], function () {
+            Route::get('/', [InfodiskonController::class, 'index'])->name('diskon');
+            Route::get('/create', [InfodiskonController::class, 'create'])->name('diskon.create');
+            Route::post('/store', [InfodiskonController::class, 'store'])->name('diskon.store');
+            Route::get('/edit/{id}', [InfodiskonController::class, 'edit'])->name('diskon.edit');
+            Route::post('/update/{id}', [InfodiskonController::class, 'update'])->name('diskon.update');
+            Route::delete('/destroy/{id}', [InfodiskonController::class, 'destroy'])->name('diskon.destroy');
+        });
     });
 });
 

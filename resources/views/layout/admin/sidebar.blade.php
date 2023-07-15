@@ -3,7 +3,7 @@
         <a href="index3.html" class="brand-link bg-warning">
             <img src="{{ asset('assetadmin/docs/assets/img/logo-klinik.png') }}" alt="AdminLTE Logo"
                 class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light"><b>SIPAKAR</b></span>
+                <span class="brand-text font-weight-light"><b>DIVA GLAM</b></span>
         </a>
     <!-- Sidebar -->
     <div class="sidebar ">
@@ -44,7 +44,7 @@
                     </li>
                     <li class="nav-header">INFORMASI</li>
                     <li class="nav-item">
-                        <a href="/treatment" class="nav-link {{ request()->is('treatment') ? 'active' : '' }}">
+                        <a href="treatment" class="nav-link {{ request()->is('treatment') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-folder"></i>
                             <p>Treatments </p>
                         </a>
