@@ -23,7 +23,7 @@
           @csrf
             <div class="card-body">
                 <div class="form-group">
-                  <label for="kodejeniskulit">Kode Jenis Kulit</label>
+                  <label for="kodejeniskulit">Nama Jenis Kulit</label>
                   <select name="kode_jeniskulit" class="form-control @error('kode_gejala') is-invalid @enderror" value="{{ old('kode_jeniskulit', '') }}" >
                     <option value="">- pilih -</option>
                     @foreach($jeniskulit as $j)
@@ -35,7 +35,7 @@
                   @enderror
                 </div>
                 <div class="form-group">
-                  <label for="kodegejala">Kode Gejala</label>
+                  <label for="kodegejala">Nama Gejala</label>
                   <select name="kode_gejala" class="form-control @error('kode_gejala') is-invalid @enderror" value="{{ old('kode_gejala', '') }}" >
                     <option value="">- pilih -</option>
                     @foreach($gejalakulit as $g)

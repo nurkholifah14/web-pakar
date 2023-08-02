@@ -11,7 +11,7 @@
             <!-- Project Card 2-->
             <div class="card overflow-hidden shadow rounded-4 border-0">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                     <table class="table table-hover text-nowrap table-bordered">
                     <thead>
                         <tr class="bg-warning">
@@ -38,8 +38,6 @@
                               <form>
                                 <a href="{{ url('/hasil/'.$r->id) }}" class="btn btn-success btn-sm">
                                 <i class="fa fa-eye"></i> Detail</a>
-                                <a href="{{ url('/hasil_pdf/'.$r->id) }}" class="btn btn-info btn-sm">
-                                <i class="fa fa-print"></i> cetak</a>
                               </form>
                             </td>
                         </tr>

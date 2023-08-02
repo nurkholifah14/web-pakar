@@ -38,11 +38,9 @@
                             <td>{{$r->telp}}</td>
                             <td>{{$r->created_at->format('d-m-Y')}}</td>
                             <td>
-                              <form action="/admin/riwayat-diagnosa/{{$r->id}}" method="POST">
+                              <form action="/riwayat-diagnosa/{{$r->id}}" method="POST">
                                 <a href="{{ url('/hasil/'.$r->id) }}"  class="btn btn-success btn-sm">
                                 <i class="fa fa-eye"></i> Detail</a>
-                                <a href="{{ url('/hasil_pdf/'.$r->id) }}" class="btn btn-primary btn-sm">
-                                <i class="fa fa-print"></i> cetak</a>
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="deleteConfirm(event)">

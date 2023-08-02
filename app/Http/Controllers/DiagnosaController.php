@@ -342,6 +342,6 @@ class DiagnosaController extends Controller
     {
         RiwayatDiagnosa::destroy($id);
         Alert::success('Berhasil', 'Data Berhasil dihapus');
-        return redirect('/admin/riwayat-diagnosa');
+        return redirect('/riwayat-diagnosa');
     }
 }

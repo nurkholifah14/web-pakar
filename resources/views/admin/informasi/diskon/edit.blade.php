@@ -36,7 +36,7 @@
                 <div class="form-group">
                 <label for="category_id">Kategori</label>
                 <select name="category_id" class="form-control @error('category_id') is-invalid @enderror">
-                    <option value="">- pilih -</option>
+                    <option value="">-</option>
                     @foreach($categories as $category)
                         <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
                             {{ $category->name }}
@@ -52,7 +52,7 @@
                 <div class="row">
                 <div class="col-12">
                     <input type="submit" href="" value="Ubah" class="btn btn-success float-right">
-                    <a class="btn btn-secondary float-right" href="/treatment">Cancel</a>
+                    <a class="btn btn-secondary float-right" href="/diskon">Cancel</a>
                 </div>
                 </div>
             </div>

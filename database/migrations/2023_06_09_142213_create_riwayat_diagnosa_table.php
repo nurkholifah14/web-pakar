@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('telp');
             $table->String('hasil_diagnosa');
+            $table->date('tanggal_konsultasi');
             $table->text('rekomendasi_treatment');
             $table->timestamps();
         });

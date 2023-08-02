@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('gejalakulit', function (Blueprint $table) {
             $table->id();
             $table->String('kode_gejala', 5);
-            $table->string('nama_gejala');
+            $table->string('gejala');
             $table->timestamps();
         });
     }

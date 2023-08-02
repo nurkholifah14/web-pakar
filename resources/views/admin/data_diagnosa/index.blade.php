@@ -22,8 +22,8 @@
                     <thead>
                         <tr class="bg-warning">
                             <th scope="col">No</th>
-                            <th scope="col">Kode jenis Kulit</th>
-                            <th scope="col">Kode Gejala</th>
+                            <th scope="col">Nama jenis Kulit</th>
+                            <th scope="col">Nama Gejala</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>

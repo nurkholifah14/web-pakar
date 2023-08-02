@@ -1,6 +1,6 @@
 @extends('layout.user.main')
 
-<!-- @section('tittle') @lang('Informasi - jenis Kulit') @endsection -->
+@section('tittle') @lang('Hasil Diagnosa') @endsection
 
 @section('container')
 
@@ -71,7 +71,7 @@
                                                                             <tr>
                                                                                 <th>HASIL</th>
                                                                                 <th>:</th>
-                                                                                <td><p>Berdasarkan gejala yang <b>{{ $riwayat->nama }}</b> rasakan, Jenis kulit tidak ditemukan <b>( {{ $riwayat->hasil_diagnosa }} )</b>.</p> </td>
+                                                                                <td><p>Berdasarkan gejala yang <b>{{ $riwayat->nama }}</b> rasakan, Jenis kulit tidak ditemukan <b>( {{ $riwayat->hasil_diagnosa }} )</b> disarankan untuk berkonsultasi langsung dengan dokter melalui WhattsApp .</p> </td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <th>REKOMENDASI TREATMENT</th>
@@ -123,12 +123,20 @@
                                                                         <hr><br>
                                                                     </div>
                                                                     <div class="major-recomendation pb-3">
+                                                                        @auth
+                                                                        @can("admin")
+                                                                        <a class="d-block text-center mt-3"href="/admin">Back to Dashboard</a>
+                                                                        @endcan
+                                                                        @can("user")
                                                                         <form method="POST" action="/diagnosa" id="form-repeat">
                                                                             {{ csrf_field() }}
                                                                             <input type="hidden" name="id" value="{{ $riwayat->id }}">
                                                                         </form>
                                                                         <button type="button" class="btn btn-primary btn-lg " id="repeat-analisa"> Ulangi Analisa   <i class="far fa-redo"></i></button>
-                                                                        <button type="button" class="btn btn-success btn-lg"><i class="fab fa-whatsapp"></i>  Konsultasi </button>
+                                                                        <a href="/send-whatsapp" class="btn btn-success btn-lg"><i class="fab fa-whatsapp"></i> Konsultasi </a>
+                                                                        <a class="d-block text-center mt-3"href="/riwayat">Kembali</a>
+                                                                        @endcan
+                                                                        @endauth
                                                                     </div>
                                                                 </div>
                                                                 </fieldset>
@@ -253,15 +261,16 @@
                                                                         <hr><br>
                                                                     </div>
                                                                     <div class="major-recomendation pb-3">
-                                                                        <div class="d-grid gap-2 d-lg-block">
-                                                                            <button type="button" class="btn btn-success btn-lg"><i class="fab fa-whatsapp"></i> Konsultasi </button>
-                                                                            <a href="{{ url('/hasil_pdf/'.$riwayat['id']) }}" class="btn btn-primary btn-lg"><i class="fa fa-print"></i> Cetak Hasil Diagnosa </a>
-                                                                        </div>
                                                                         @auth
                                                                         @can("admin")
+                                                                        <a href="{{ url('/hasil_pdf/'.$riwayat['id']) }}" class="btn btn-primary btn-lg"><i class="fa fa-print"></i> Cetak Hasil Diagnosa </a>
                                                                         <a class="d-block text-center mt-3"href="/admin">Back to Dashboard</a>
                                                                         @endcan
                                                                         @can("user")
+                                                                        <div class="d-grid gap-2 d-lg-block">
+                                                                            <a href="/send-whatsapp" class="btn btn-success btn-lg"><i class="fab fa-whatsapp"></i> Konsultasi </a>
+                                                                            <a href="{{ url('/hasil_pdf/'.$riwayat['id']) }}" class="btn btn-primary btn-lg"><i class="fa fa-print"></i> Cetak Hasil Diagnosa </a>
+                                                                        </div>
                                                                         <a class="d-block text-center mt-3"href="/riwayat">Kembali</a>
                                                                         @endcan
                                                                         @endauth

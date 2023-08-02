@@ -41,7 +41,7 @@
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link {{ request()->is('tentang') ? 'active' : '' }}" href="/tentang">Tentang</a></li>
-            <li><a class="nav-link scrollto nav-link {{ request()->is('contact') ? 'active' : '' }}" href="/contact">Contact</a></li>
+            <li><a class="nav-link scrollto nav-link {{ request()->is('kontak') ? 'active' : '' }}" href="/kontak">Kontak</a></li>
             <li><a class="getstarted scrollto-outline" href="/login">Login</a></li>
             @endauth
 

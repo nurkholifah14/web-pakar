@@ -23,12 +23,12 @@
           @method('PUT')
             <div class="card-body">
             <div class="form-group">
-                <label for="kodejeniskulit">Kode Jenis Kulit</label>
+                <label for="kodejeniskulit">Nama Jenis Kulit</label>
                 <select name="kode_jeniskulit" class="form-control @error('kode_jeniskulit') is-invalid @enderror">
                     <option value="">- pilih -</option>
                     @foreach($jeniskulit as $j)
                         <option value="{{$j->kode_jenis}}" {{ $j->kode_jenis == $edit->kode_jeniskulit ? 'selected' : '' }}>
-                            {{$j->kode_jenis}}
+                            {{$j->nama_jeniskulit}}
                         </option>
                     @endforeach
                 </select>
@@ -38,12 +38,12 @@
             </div>
 
             <div class="form-group">
-              <label for="kodegejala">Kode Gejala</label>
+              <label for="kodegejala">Nama Gejala</label>
               <select name="kode_gejala" class="form-control @error('kode_gejala') is-invalid @enderror">
                   <option value="">- pilih -</option>
                   @foreach($gejalakulit as $g)
                       <option value="{{$g->id}}" {{ $g->id == $edit->id_gejala ? 'selected' : '' }}>
-                          {{$g->kode_gejala}}
+                          {{$g->gejala}}
                       </option>
                   @endforeach
               </select>
