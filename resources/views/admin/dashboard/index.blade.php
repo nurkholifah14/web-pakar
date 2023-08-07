@@ -55,7 +55,7 @@
                 <div class="icon">
                     <i class="nav-icon fas fa-copy"></i>
                 </div>
-                <a href="#" class="small-box-footer">Selengkapnya<i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/jeniskulit" class="small-box-footer">Selengkapnya<i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -69,7 +69,7 @@
                 <div class="icon">
                     <i class="nav-icon fas fa-chart-line"></i>
                 </div>
-                <a href="#" class="small-box-footer">selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/riwayat-diagnosa" class="small-box-footer">selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
