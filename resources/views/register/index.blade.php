@@ -1,5 +1,7 @@
 @extends('layout.auth.login')
 
+@section('tittleauth') @lang('Register') @endsection
+
 @section('container')
 
 <div class="login-box">

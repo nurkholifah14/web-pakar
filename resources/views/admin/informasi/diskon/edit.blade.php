@@ -51,8 +51,8 @@
             <div class="card-footer">
                 <div class="row">
                 <div class="col-12">
-                    <input type="submit" href="" value="Ubah" class="btn btn-success float-right">
-                    <a class="btn btn-secondary float-right" href="/diskon">Cancel</a>
+                    <input type="submit" href="" value="Ubah" style="margin-right: 10px;" class="btn btn-success float-right">
+                    <a class="btn btn-secondary float-right" style="margin-right: 10px;" href="/diskon">Cancel</a>
                 </div>
                 </div>
             </div>

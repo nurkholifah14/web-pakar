@@ -8,6 +8,7 @@ return [
     "Tentang" => "Tentang",
     "Kontak" => "Kontak",
     "Identitas" => "Identitas",
+    "Diagnosa" => "Diagnosa",
     "Dashboard - Admin" => "Dashboard - Admin",
     "Data Pengguna" => "Data Pengguna",
     "Data Gejala Kulit" => "Data Gejala Kulit",
@@ -16,5 +17,9 @@ return [
     "Hasil Diagnosa" => "Hasil Diagnosa",
     "Data Treatment" => "Data Treatment",
     "Riwayat Diagnosa" => "Riwayat Diagnosa",
-
+    "Ubah Profile" => "Ubah Profile",
+    "Login" => "Login",
+    "Register" => "Register",
+    "Forget Password" => "Forget Password",
+    "Reset Password" => "Reset Password",
 ];

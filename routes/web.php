@@ -12,6 +12,7 @@ use App\Http\Controllers\DataDiagnosaController;
 use App\Http\Controllers\DiagnosaController;
 use App\Http\Controllers\WhatsAppController;
 use App\Http\Controllers\InfodiskonController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +31,10 @@ Route::group(["middleware" => ["can:user"]], function() {
     Route::get('/identitas', function (){
         return view('/diagnosa/identitas');
     });
+    Route::get('/profile', [LoginController::class, 'profile']);
+    Route::post('/update', [LoginController::class, 'update']);
     Route::get('/riwayat', [DiagnosaController::class, 'riwayatDiagnosa']);
-    Route::get('/send-whatsapp', [WhatsappController::class, 'index']);
+    Route::get('/send-whatsapp/{id}', [WhatsappController::class, 'index']);
     Route::post('/send-whatsapp', [WhatsAppController::class, 'sendMessage'])->name('send.whatsapp');
 });
 
@@ -94,3 +97,8 @@ Route::post('/update-password', [LoginController::class, 'updatePassword']);
 Route::post('/update-profile', [LoginController::class, 'updateProfile']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
+
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');

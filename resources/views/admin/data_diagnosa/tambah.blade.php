@@ -50,8 +50,8 @@
             <div class="card-footer">
               <div class="row">
                 <div class="col-12">
-                    <button class="btn btn-success float-right" type="submit">Simpan</button>
-                    <a class="btn btn-secondary float-right" href="/data-diagnosa">Cancel</a>
+                    <button class="btn btn-success float-right" style="margin-right: 10px;" type="submit">Simpan</button>
+                    <a class="btn btn-secondary float-right" style="margin-right: 10px;" href="/data-diagnosa">Cancel</a>
                 </div>
               </div>
             </div>

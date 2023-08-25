@@ -1,6 +1,6 @@
 @extends('layout.user.main')
 
-<!-- @section('tittle') @lang('Informasi - jenis Kulit') @endsection -->
+@section('tittle') @lang('Diagnosa') @endsection
 
 @section('container')
 
@@ -31,8 +31,11 @@
                                 <input type="hidden" id="idAnalisa" value="{{ $id }}">
                                 <input type="hidden" id="no" value="{{ $no }}">
                                 <input type="hidden" id="premis" value="{{ $gejala->id }}">
-                                <button class="btn-answer" data-answer="1">Ya <i class="far fa-thumbs-up"></i></button>
-                                <button class="btn-answer" data-answer="0">Tidak <i class="far fa-thumbs-down"></i></button>    
+                                <div clsss="row">
+                                    <button class="btn-answer" data-answer="1">Ya <i class="far fa-thumbs-up"></i></button>
+                                    <button class="btn-answer" data-answer="0">Tidak <i class="far fa-thumbs-down"></i></button>
+                                </div>
+                                <!-- <button class="btn-answer bg-secondary" >Back<i class="far fa-back"></i></button>     -->
                             </div>
                         </div>
                     </div>

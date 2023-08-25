@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use DB;
+use App\Models\User;
 use DateTimeInterface;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class RiwayatDiagnosa extends Model
 {
@@ -44,4 +45,8 @@ class RiwayatDiagnosa extends Model
     return $date->format('Y-m-d H:i:s');
 }
 
+public function user()
+{
+    return $this->belongsTo(User::class,'id_user');
+}
 }

@@ -25,7 +25,7 @@ class RegisterController extends Controller
             "password_confirmation" => "required|min:5|max:8",
         ]);
 
-        User::create([
+       $user = User::create([
             "name" => $validatedData['name'],
             "email" => $validatedData['email'],
             "password" => bcrypt($validatedData['password']),
@@ -34,7 +34,10 @@ class RegisterController extends Controller
         ]);
 
 
-        return redirect('/login')->with('success', 'Registration successfull!!. Please login!!');
+        return redirect('/login')->with([
+            'success', 'Registration successfull!!. Please login!!',
+            'registeredEmail' => $user->email
+        ]);
        
 
     }

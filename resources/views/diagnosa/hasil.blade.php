@@ -268,10 +268,14 @@
                                                                         @endcan
                                                                         @can("user")
                                                                         <div class="d-grid gap-2 d-lg-block">
-                                                                            <a href="/send-whatsapp" class="btn btn-success btn-lg"><i class="fab fa-whatsapp"></i> Konsultasi </a>
+                                                                            <a href="{{ url('send-whatsapp', $riwayat->id) }}" class="btn btn-success btn-lg"><i class="fab fa-whatsapp"></i> Konsultasi </a>
                                                                             <a href="{{ url('/hasil_pdf/'.$riwayat['id']) }}" class="btn btn-primary btn-lg"><i class="fa fa-print"></i> Cetak Hasil Diagnosa </a>
                                                                         </div>
-                                                                        <a class="d-block text-center mt-3"href="/riwayat">Kembali</a>
+                                                                        <form method="POST" action="/diagnosa" id="form-repeat">
+                                                                            {{ csrf_field() }}
+                                                                            <input type="hidden" name="id" value="{{ $riwayat->id }}">
+                                                                        </form>
+                                                                        <a type="button" class="d-block text-center mt-3" id="repeat-analisa">Kembali</a>
                                                                         @endcan
                                                                         @endauth
                                                                     </div>

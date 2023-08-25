@@ -17,8 +17,7 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
-        // $input = $request->all();
-
+        
         $credentials = $request->validate([
             'email'=> 'required',
             'password'=>'required'
@@ -64,6 +63,27 @@ class LoginController extends Controller
             "email" => $request['email'],
            ]);
         return redirect('/admin');
+
+    }
+
+    public function profile(){
+        return view('login.edit');
+    }
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            "name" => "required|max:255",
+            "email" => "required",
+            'old_password' => 'required|current_password',
+            'new_password' => 'required|min:5',
+        ]);
+        User::where("id", Auth::user()->id)->update([
+            "name" => $request['name'],
+            "email" => $request['email'],
+            "password" => bcrypt($request["new_password"])
+           ]);
+        return redirect('/profile');
 
     }
 

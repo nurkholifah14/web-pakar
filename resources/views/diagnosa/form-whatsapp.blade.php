@@ -15,27 +15,24 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('send.whatsapp') }}">
                             @csrf
+                        
                             <div class="form-group">
                                 <label for="nama">Nama</label>
-                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama Anda">
+                                <input type="text" class="form-control" id="nama" value="{{ $riwayat->nama}}" name="nama" placeholder="Masukkan nama Anda">
                             </div>
                             <div class="form-group mt-3">
                                 <label for="usia">Usia</label>
-                                <input type="text" class="form-control" id="usia" name="usia" placeholder="Masukkan usia Anda">
+                                <input type="text" class="form-control" id="usia" value="{{ $riwayat->umur}}" name="usia" placeholder="Masukkan usia Anda">
                             </div>
                             <div class="form-group mt-3">
                                 <label for="alamat">Alamat</label>
-                                <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukkan alamat Anda">
+                                <input type="text" class="form-control" id="alamat" value="{{ $riwayat->alamat}}" name="alamat" placeholder="Masukkan alamat Anda">
                             </div>
                             <div class="form-group mt-3">
                                 <label for="tipe_wajah">Tipe Wajah</label>
                                     <select class="form-select" aria-label="Default select example" id="tipe_wajah" name="tipe_wajah">
+                                        <option>{{ $riwayat->hasil_diagnosa}}</option>
                                         <option>-</option>
-                                        <option value="Normal">Normal</option>
-                                        <option value="Berminyak">Berminyak</option>
-                                        <option value="Kering">Kering</option>
-                                        <option value="Sensitif">Sensitif</option>
-                                        <option value="Kombinasi">Kombinasi</option>
                                     </select>
                             </div>
                             <div class="form-group mt-3">
@@ -49,10 +46,6 @@
                             <div class="form-group mt-3">
                                 <label for="riwayat_cream">Riwayat Pemakaian Cream</label>
                                 <textarea class="form-control" id="riwayat_cream" name="riwayat_cream" rows="3" placeholder="Tuliskan riwayat pemakaian cream di wajah Anda"></textarea>
-                            </div>
-                            <div class="form-group mt-3">
-                                <label for="harapan_perawatan">Harapan Setelah Perawatan</label>
-                                <textarea class="form-control" id="harapan_perawatan" name="harapan_perawatan" rows="3" placeholder="Tuliskan harapan Anda setelah melakukan perawatan di wajah anda"></textarea>
                             </div>
                             <div class="col-12 mt-3">
                                 <a class="btn btn-secondary float-right" href="/riwayat">Cancel</a>

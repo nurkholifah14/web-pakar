@@ -1,5 +1,7 @@
 @extends('layout.auth.login')
 
+@section('tittleauth') @lang('Login') @endsection
+
 @section('container')
 
 <section class="hold-transition login-page">
@@ -20,7 +22,7 @@
                 <form action="/login" method="post">
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" id="email" name="email" value="{{old('email')}}">
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" id="email" name="email" value="{{old('email', session('registeredEmail'))}}">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -48,8 +50,11 @@
                     <!-- /.col -->
                     </div>
                 </form>
-                <small class="d-block text-center mt-3">Not registered? <a href="/register">Register Now!</a></small>
-                <small class="d-block text-center"><a href="/">Back to Dashboard</a></small>
+                <div class="col-12">
+                    <small class="d-block text-md-right mt-3">Not registered? <a href="/register">Register Now!</a></small>
+                    <small class="d-block"><a href="{{ route('forget.password.get') }}">Lupa Password ?</a></small>
+                    <small class="d-block"><a href="/">Back to Dashboard</a></small>
+                </div>
             </div>
             <!-- /.login-card-body -->
         </div>

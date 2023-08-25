@@ -27,7 +27,8 @@
               {{ auth()->user()->name }}
             </a>
             <ul>
-              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+              <li><a class="dropdown-item" href="/profile">Ubah Profile</a></li>
+              <li><a class="dropdown-item"  href="/logout">Logout</a></li>
             </ul>
           </li>
           @endcan
@@ -48,6 +49,5 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
     </div>
 </header>

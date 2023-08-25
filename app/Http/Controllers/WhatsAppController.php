@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\RiwayatDiagnosa;
 use Illuminate\Support\Facades\Http;
 
 class WhatsAppController extends Controller
@@ -17,7 +18,6 @@ class WhatsAppController extends Controller
         $tipeWajah = $request->input('tipe_wajah');
         $keluhanWajah = $request->input('keluhan_wajah');
         $riwayatCream = $request->input('riwayat_cream');
-        $harapanCream = $request->input('harapan_cream');
     
         // Ubah nomor telepon menjadi format internasional
         $phone = str_replace(['+', ' '], '', $phone);
@@ -30,7 +30,7 @@ class WhatsAppController extends Controller
         $message .= "Tipe Wajah: {$tipeWajah}\n";
         $message .= "Keluhan Wajah: {$keluhanWajah}\n";
         $message .= "Riwayat Pemakaian Cream Sebelumnya: {$riwayatCream}\n";
-        $message .= "Harapan Setelah Pakai Cream: {$harapanCream}";
+    
     
         // Buat URL untuk mengirim pesan WhatsApp
         $url = "https://api.whatsapp.com/send?phone={$phone}&text=" . urlencode($message);
@@ -44,9 +44,15 @@ class WhatsAppController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('diagnosa.form-whatsapp');
+    // public function index()
+    // {
+    //     return view('diagnosa.form-whatsapp');
+    // }
+
+    public function index($id){
+
+        $riwayat = RiwayatDiagnosa::with(['user'])->find($id);
+        return view('diagnosa\form-whatsapp', compact('riwayat'))->with('success', $riwayat->nama);
     }
 
     /**
